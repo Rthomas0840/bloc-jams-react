@@ -104,8 +104,7 @@ class Album extends Component {
 
       formatTime(seconds) {
         console.log("SomethingsHappening");
-        const time = this.state.duration;
-        var mins = time / 60;
+        var mins = seconds / 60;
         var secs = mins / 60;
         var x = secs.toFixed(2) * 100;
         var y = Math.round((mins * 100) / 100);
@@ -156,7 +155,7 @@ class Album extends Component {
             duration={this.state.duration}
             handleTimeChange={(e) => this.handleTimeChange(e)}
             handleVolumeChange={(e) => this.handleVolumeChange(e)}
-            formatTime={() => this.formatTime()} />
+            formatTime={(seconds) => this.formatTime(seconds)} />
        </section>
      );
    }
