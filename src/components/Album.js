@@ -105,13 +105,14 @@ class Album extends Component {
 
       formatTime(seconds) {
         console.log("SomethingsHappening");
-        var mins = seconds / 60;
-        var secs = mins / 60;
-        var x = secs.toFixed(2) * 100;
-        var y = Math.round((mins * 100) / 100);
-        return y + ":" + x;
-      }
-
+          const mins = Math.floor(seconds / 60);
+          const secs = Math.ceil(seconds % 60);
+          if (secs < 10) {
+          return (mins+":"+ 0 + secs);
+        } else {
+          return (mins + ":" + secs);
+        }
+}
 
 
    render() {
